@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>userlogin</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+	<div class="login-form">
+		<input type="radio" name="tab" class="tab" id="sign-up-tab" checked>
+		<label for="sign-up-tab" class="tab-header">Log In</label>
+		<input type="radio" name="tab" class="tab" id="sign-in-tab" checked>
+		<label for="sign-in-tab" class="tab-header">Sign Up</label>
+
+		<form id="form1">
+			<div class="header">Sign Up for Free</div>
+			<div class="form-input">
+				<input type="text" class="input1" id="new-username" placeholder="First Name" required>
+				<input type="text" class="input1" id="new-username" placeholder="Last Name" required>
+			</div>
+			<div class="form-input">
+				<input type="email" class="input" id="email" placeholder="Email Address" required>
+			</div>
+			<div class="form-input">
+				<input type="password" class="input" id="password" placeholder="Set A Password" required>
+			</div>
+			<input type="submit" class="submit-button" id="sign-up" value="GET STARTED">
+		</form>
+		<form id="form2">
+			<div class="header">Log In for Free</div>
+			<div class="form-input">
+				<input type="text" class="input" id="username" placeholder="Username" required>
+				<i class="fas fa-user"></i>
+			</div>
+			<div class="form-input">
+				<input type="password" class="input" id="pswrd" placeholder="Password" required>
+				<i class="fas fa-lock"  onclick="show()"></i>
+			</div>
+			<input type="checkbox" id="check"><span>Keep me Signed in</span>
+			<input type="submit" id="sign-in" class="submit-button" value="Log In">
+		</form>
+	</div>
+
+	<script>
+		function show(){
+			var pswrd = document.getElementById('pswrd');
+			var icon = document.querySelector('.fas');
+			if(pswrd.type === "password"){
+				pswrd.type = "text";
+			}else{
+				pswrd.type = "password";
+				icon.style.color = "grey";
+			}
+		}
+	</script>
+
+</body>
+</html>
